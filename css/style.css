@@ -6,15 +6,39 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
+
+  font-family: 'DotGothic16', monospace !important;
 }
 
 #main {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
+  margin-left: 0%;
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 
-#main p {
-  text-align: center;
+#main i {
+  padding: 0em 0.5em 1em 0.5em;
+  font-size: 2em;
+}
+
+#main a {
+  color: var(--foreground);
+}
+
+#links {
+  border-width: 0.25em;
+  border-radius: 1.5em;
+  border-color: var(--foreground);
+  border-style: solid;
+}
+
+#links img {
+  width: 10em;
+}
+
+#construction {
+  width: 10em;
 }
