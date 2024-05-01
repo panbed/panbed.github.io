@@ -4,6 +4,7 @@ $background: black;
 $background-alt: #242424;
 $foreground: white;
 $foreground-alt: #AFAFAF;
+$background-text: #2f2f2f;
 
 // import dos font faces
 @font-face {
@@ -41,8 +42,8 @@ $foreground-alt: #AFAFAF;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  // padding: 1em;
-  margin: -0.5em;
+  padding: 1em 1em 0em 1em;
+  margin: -0.75em;
   justify-content: space-between;
 
   .pageLinks {
@@ -51,11 +52,6 @@ $foreground-alt: #AFAFAF;
 
   .socialLinks {
     justify-content: right;
-
-    a {
-      // justify-content: center;
-      padding: 1em;
-    }
   }
 
   ul {
@@ -73,6 +69,17 @@ $foreground-alt: #AFAFAF;
     font-weight: 500;
     color: $foreground-alt;
     text-decoration: inherit;
+    background-color: $background;
+
+    // border-width: 0.25em;
+    // border-style: groove;
+    
+    padding: 0.75em;
+  }
+
+  ion-icon {
+    // the ion icons are slightly off center??
+    transform: translateY(25%);
   }
 
   a:hover {
@@ -85,14 +92,53 @@ $foreground-alt: #AFAFAF;
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
 
-  margin: -1em;
-  padding: 0;
+  border-style: ridge;
+  border-color: $background-alt;
+  border-bottom-width: 0.5em;
+  border-top-width: 0;
+
+  margin: -0.75em;
+
+  padding: 0em 1em 0em 2em;
 
   h1 {
     font-size: 3.2em;
     line-height: 1.1;
+  }
+}
+
+.pixelGrid {
+  color: $background-text;
+
+  width: 100%;
+
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: -1;
+
+  user-select: none;
+  top: 10em; // no idea what im doing bro
+
+  gap: 0em;
+  overflow: hidden;
+  
+  margin: 0;
+  padding: 0;
+
+  max-width: 100%;
+
+  .pixelItem {
+    transition: all 0.1s;
+    // background-color: red;
+    padding: 0.25em;
+    font-size: x-large;
+  }
+
+  .pixelItem:hover {
+    transform: scale(1.5);
   }
 }
 

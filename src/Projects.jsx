@@ -30,7 +30,7 @@ export default function Projects() {
     <>
       <Heading title="Projects"/>
 
-      {/* <p>Welcome to my projects! Here's just some of the stuff I worked on, available at my GitHub</p> */}
+      <p>Welcome to my projects! Here's just some of the stuff I worked on, available at my GitHub</p>
     </>
   );
 }
