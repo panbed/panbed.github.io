@@ -2,11 +2,12 @@
 import { Outlet, Link } from "react-router-dom";
 
 import LiveWallpaper from './LiveWallpaper';
+import Heading from "./Heading";
 
 import './App.scss'
 import { useState } from "react";
 
-export default function Layout() {
+export default function Layout({ title }) {
   // const [myState, setMyState] = useState("unset")
   return (
     <>
@@ -30,15 +31,21 @@ export default function Layout() {
         <ul className="socialLinks">
           {/* todo: add link text for accessibility but hide normally somehow*/}
           <li>
-            <a href="https://www.linkedin.com/in/bed-pandey/"><ion-icon name="logo-linkedin" /></a>
+            <a href="https://www.linkedin.com/in/bed-pandey/" target='_blank'><ion-icon name="logo-linkedin" /></a>
           </li>
           <li>
-            <a href="https://github.com/panbed"><ion-icon name="logo-github" /></a>
+            <a href="https://github.com/panbed" target='_blank'><ion-icon name="logo-github" /></a>
           </li>
           
         </ul>
       </nav> 
-      <Outlet />
+
+      <Heading title={title}/>
+
+      <div className="outlet">
+        <Outlet />
+      </div>
+      
     </>
   );
 }

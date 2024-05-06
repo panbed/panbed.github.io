@@ -34,7 +34,7 @@ $background-text: #2f2f2f;
 
 // navbar styling
 .navigation {
-  background: $background-alt;
+  // background: $background-alt;
 
   font-family: "ModernDOS8x8";
   font-size: large;
@@ -63,6 +63,10 @@ $background-text: #2f2f2f;
   li {
     float: right;
     padding: 1em;
+
+    @media (orientation: portrait) {
+      padding: 0.25em;
+    }
   }
 
   a {
@@ -75,6 +79,11 @@ $background-text: #2f2f2f;
     // border-style: groove;
     
     padding: 0.75em;
+    @media (orientation: portrait) {
+      // padding: 0%;
+      // border-style: solid;
+      // border-radius: 10em;
+    }
   }
 
   ion-icon {
@@ -85,21 +94,27 @@ $background-text: #2f2f2f;
   a:hover {
     color: $foreground;
   }
+
+  @media (orientation: portrait) {
+    justify-content: center;
+    // flex-wrap: nowrap;
+    
+  }
 }
 
 .mainHeader {
-  background: $background-alt;
+  // background: $background-alt;
 
   display: flex;
   align-items: center;
   justify-content: left;
 
-  border-style: ridge;
-  border-color: $background-alt;
-  border-bottom-width: 0.5em;
-  border-top-width: 0;
+  // border-style: ridge;
+  // border-color: $background-alt;
+  // border-bottom-width: 0.5em;
+  // border-top-width: 0;
 
-  margin: -0.75em;
+  // margin: -0.75em;
 
   padding: 0em 1em 0em 2em;
 
@@ -107,9 +122,16 @@ $background-text: #2f2f2f;
     font-size: 3.2em;
     line-height: 1.1;
   }
+
+  @media (orientation: portrait) {
+    justify-content: center; 
+    padding: 0;
+  }
 }
 
 .pixelGrid {
+  pointer-events: auto;
+
   color: $background-text;
 
   width: 100%;
@@ -134,7 +156,8 @@ $background-text: #2f2f2f;
     transition: all 0.1s;
     // background-color: red;
     padding: 0.25em;
-    font-size: x-large;
+    font-size: 2em;
+    
   }
 
   .pixelItem:hover {
@@ -142,10 +165,201 @@ $background-text: #2f2f2f;
   }
 }
 
-// body {
-// }
 
+// todo: fix the window it should be taking up the rest of the browser window i guess
+// also make it so that you can still see the cool circle thing in the background
+.outlet {
+  // pointer-events: none;
+  // background-color: rgba(0, 50, 50, 0.50);
 
+  display: flex;
+  // flex: 1;
+  // flex-direction: row;
+  // align-items: center;
+  // justify-content: center;
+  // gap: 1em;
+  // padding: 1em;
+  margin-top: 1%;
+  height: 70vh;
+  
+  // flex-grow: 1;
+  // gap: 2em;
+  // pointer-events: none;
+
+  @media (orientation: portrait) {
+    flex-direction: column;
+    height: 100%;
+    margin-top: 0%;
+  }
+}
+
+.windowBox {
+  // align-self: center;
+  // flex: 1;
+  // display: flex;
+  // background-color: #ff000033; 
+  // position: absolute;
+  // justify-content: center;
+}
+
+.projectWindow {
+  // display: flex;
+  // flex-direction: column;
+  flex: 1;
+  background-color: #000000cc;
+  border-style: groove;
+  border-color: $foreground-alt;
+  border-width: 0.5em;
+
+  padding: 1em;
+  overflow-y: scroll;
+
+  @media (orientation: portrait) {
+    border-style: none;
+    padding: 0.25em;
+    // text-align: center;
+
+    .titlebar {
+      display: none;
+    }
+  }
+
+  
+}
+
+.prgrid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .prgridleft {
+    // display: flex;
+    flex-direction: column;
+    // grid-template-columns: repeat(2, 1fr);
+    // gap: 1em;
+  }
+  
+  .prgridright {
+    display: flex;
+    flex-direction: column;
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 1em;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      align-self: center;
+    }
+  
+    li {
+      // padding: 1em;
+      padding: 0em 0em 1em 0em;
+      // background-color: purple;
+      // position: relative;
+      // display: flex;
+      // flex-direction: row;
+      // flex-wrap: wrap;
+    }
+    a {
+      color: $foreground;
+      font-size: 2em;
+      padding: 0em 0em 0em 1em;
+      float: right;
+
+    }
+    // align-items: right;
+    // align-self: right;
+  }
+}
+
+.icons {
+  // position: flex;
+  // flex-direction: row;
+  // flex-basis: 0;
+  // background: green;
+
+  // pointer-events: auto;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 1em;
+
+    @media (orientation: portrait) {
+      display: flex;
+      flex-direction: row;
+      overflow-x: scroll;
+      padding: 0em;
+
+      
+    }
+    
+  }
+
+  li {
+    // padding: 1em;
+    padding: 0em 0em 1em 0em;
+    // position: relative;
+    display: flex;
+    flex-direction: column;
+    // flex-wrap: wrap;
+
+    text-align: center;
+    justify-content: left;
+    
+    @media (orientation: portrait) {
+      padding: 0em;
+      
+    }
+
+  }
+
+  img {
+    object-fit: cover;
+    // position: absolute;
+    width: 2.5em;
+    height: 2.5em;
+    align-items: center;
+    align-self: center;
+  }
+
+  button {
+    background-color: transparent;
+    border-color: transparent;
+
+    color: $foreground;
+    font-family: 'ModernDOS8x16';
+
+    display: flex;
+    flex-direction: column;
+    transition: all 0.125s;
+  }
+
+  button:hover {
+    transform: scale(1.25);
+  }
+
+  button:active {
+    transform: scale(1);
+  }
+}
+
+.titlebar {
+  // background-color: $foreground-alt;
+  color: $foreground-alt;
+
+  // padding: 0.1em;
+  // border-width: 10px;
+  // border-style: ridge;
+}
+
+body {
+  // display: ;
+}
 
 // button {
 //   border-radius: 8px;
