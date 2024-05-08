@@ -1,0 +1,602 @@
+
+// color variables
+$background: black;
+$background-alt: #242424;
+$foreground: white;
+$foreground-alt: #AFAFAF;
+$background-text: #ffffff33;
+
+// import dos font faces
+@font-face {
+  font-family: "ModernDOS8x16";
+  src: url("/fonts/ModernDOS8x16.ttf");
+}
+
+@font-face {
+  font-family: "ModernDOS8x8";
+  src: url("/fonts/ModernDOS8x8.ttf");
+}
+
+:root {
+  // font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'ModernDOS8x16', monospace;
+
+  // color-scheme: light dark;
+  color: $foreground;
+  background-color: $background;
+
+  // disable antialiasing?
+  font-synthesis: none;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: never;
+  
+  scrollbar-color: #00000000 #00000000;
+}
+
+// navbar styling
+.navigation {
+  // background: $background-alt;
+
+  font-family: "ModernDOS8x8";
+  font-size: large;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 1em 1em 0em 1em;
+  margin: -0.75em;
+  justify-content: space-between;
+
+  .pageLinks {
+    justify-content: left;
+  }
+
+  .socialLinks {
+    justify-content: right;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    float: right;
+    padding: 1em;
+
+    @media (orientation: portrait) {
+      padding: 0.25em;
+    }
+  }
+
+  a {
+    font-weight: 500;
+    color: $foreground-alt;
+    text-decoration: inherit;
+    background-color: $background;
+
+    // border-width: 0.25em;
+    // border-style: groove;
+    
+    padding: 0.75em;
+    @media (orientation: portrait) {
+      // padding: 0%;
+      // border-style: solid;
+      // border-radius: 10em;
+    }
+  }
+
+  ion-icon {
+    // the ion icons are slightly off center??
+    transform: translateY(25%);
+  }
+
+  a:hover {
+    color: $foreground;
+  }
+
+  @media (orientation: portrait) {
+    justify-content: center;
+    // flex-wrap: nowrap;
+    
+  }
+}
+
+.mainHeader {
+  // background: $background-alt;
+
+  display: flex;
+  align-items: center;
+  justify-content: left;
+
+  // border-style: ridge;
+  // border-color: $background-alt;
+  // border-bottom-width: 0.5em;
+  // border-top-width: 0;
+
+  // margin: -0.75em;
+
+  padding: 0em 1em 0em 2em;
+
+  h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+  }
+
+  @media (orientation: portrait) {
+    justify-content: center; 
+    padding: 0;
+  }
+}
+
+.pixelGrid {
+  pointer-events: auto;
+
+  color: $background-text;
+
+  width: 100%;
+
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: -1;
+
+  user-select: none;
+  top: 20vh; // no idea what im doing bro
+
+  gap: 0em;
+  overflow: hidden;
+  
+  margin: 0;
+  padding: 0;
+
+  max-width: 100%;
+
+  .pixelItem {
+    transition: all 0.1s;
+    // background-color: red;
+    padding: 0.25em;
+    font-size: 2em;
+    
+  }
+
+  .pixelItem:hover {
+    transform: scale(1.5);
+  }
+}
+
+
+// todo: fix the window it should be taking up the rest of the browser window i guess
+// also make it so that you can still see the cool circle thing in the background
+.outlet {
+  // pointer-events: none;
+  // background-color: rgba(0, 50, 50, 0.50);
+
+  display: flex;
+  // flex: 1;
+  // flex-direction: row;
+  // align-items: center;
+  // justify-content: center;
+  // gap: 1em;
+  // padding: 2em;
+  margin-top: 1%;
+  height: 70vh;
+  
+  // flex-grow: 1;
+  // gap: 2em;
+  // pointer-events: none;
+
+  a {
+    color: $foreground-alt;
+  }
+  a:hover {
+    color: $foreground;
+  }
+
+  @media (orientation: portrait) {
+    flex-direction: column;
+    height: 100%;
+    margin-top: 0%;
+  }
+}
+
+.windowBox {
+  // align-self: center;
+  // flex: 1;
+  // display: flex;
+  // background-color: #ff000033; 
+  // position: absolute;
+  // justify-content: center;
+}
+
+.projectWindow {
+  // display: flex;
+  // flex-direction: column;
+  flex: 1;
+  background-color: #000000cc;
+  border-style: solid;
+  border-color: $foreground-alt;
+  border-width: 0.25em;
+  border-radius: 0.25em;
+
+  padding: 1em;
+  overflow-y: scroll;
+
+  @media (orientation: portrait) {
+    border-style: none;
+    // padding: 0.25em;
+    // text-align: center;
+
+    .titlebar {
+      display: none;
+    }
+
+    .toolbar {
+      display: none; 
+    }
+  }
+}
+
+.windowContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .windowLeft {
+    // display: flex;
+    flex-direction: column;
+    // grid-template-columns: repeat(2, 1fr);
+    // gap: 1em;
+  }
+  
+  .windowRight {
+    display: flex;
+    flex-direction: column;
+    // background-color: red;
+    padding: 1em;
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 1em;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      align-self: center;
+    }
+  
+    li {
+      // padding: 1em;
+      padding: 0em 0em 1em 0em;
+      // background-color: purple;
+      // position: relative;
+      // display: flex;
+      // flex-direction: row;
+      // flex-wrap: wrap;
+    }
+    a {
+      // background-color: red;
+      color: $foreground;
+      font-size: 2em;
+      padding: 0.5em;
+      float: center;
+
+    }
+
+    // align-items: right;
+    // align-self: right;
+    @media (orientation: portrait) {
+      
+      img {
+        width: 100%;
+        // filter: invert(100%);
+      }
+
+      ul, a
+      {
+        padding: 0.5em;
+      }
+
+      li {
+        padding: 0;
+      }
+      
+    }
+  }
+}
+
+.icons {
+  // position: flex;
+  // flex-direction: row;
+  // flex-basis: 0;
+  // background: green;
+
+  // pointer-events: auto;
+
+  ul {
+    list-style-type: none;
+    // margin: 0;
+    padding: 1em;
+    // background-color: red;
+
+    @media (orientation: portrait) {
+      display: flex;
+      flex-direction: row;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      padding: 0em;
+      justify-content: center;
+    }
+    
+  }
+
+  li {
+    // padding: 1em;
+    padding: 0em 0em 1em 0em;
+    // position: relative;
+    display: flex;
+    flex-direction: column;
+    // flex-wrap: wrap;
+
+    text-align: center;
+    justify-content: left;
+    
+    @media (orientation: portrait) {
+      padding: 0em;
+    }
+  }
+
+  img {
+    object-fit: cover;
+    // position: absolute;
+    width: 2.5em;
+    height: 2.5em;
+    align-items: center;
+    align-self: center;
+    padding: 0 0 1em 0;
+
+    @media (orientation: portrait) {
+      padding: 1em 1em 1em 1em;
+    }
+  }
+
+  button {
+    background-color: transparent;
+    border-color: transparent;
+
+    color: $foreground;
+    font-family: 'ModernDOS8x16';
+
+    display: flex;
+    flex-direction: column;
+    img {
+      transition: all 0.125s;
+    }
+  }
+
+  button:hover {
+    img {
+      transform: scale(1.25);
+    }
+    
+  }
+
+  button:active {
+    img {
+      transform: scale(1);
+    }
+  }
+}
+
+.titlebar {
+  // background-color: $foreground-alt;
+  color: $foreground-alt;
+
+  // padding: 0.1em;
+  // border-width: 10px;
+  // border-style: ridge;
+}
+
+.toolbar {
+  position: absolute;
+  bottom: 0;
+}
+
+.home {
+  // background-color: #00000066;
+  // background-color: red;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  align-self: center;
+  text-align: center;
+  align-content: center;
+  flex: 1;
+
+  ul {
+    list-style-type: none;
+    padding: 1em;
+    display: flex;
+    // flex-direction: column;
+
+    @media (orientation: portrait) {
+      display: flex;
+      
+      overflow-x: scroll;
+      margin: 0;
+
+      flex-direction: column;
+    }
+  }
+
+  li {
+    padding: 1em;
+    // position: relative;
+    display: flex;
+    flex-direction: column;
+    // flex-wrap: wrap;
+
+    text-align: center;
+    
+    @media (orientation: portrait) {
+      padding: 0em;
+    }
+  }
+
+  h1 {
+    font-size: 5em;
+    margin: 0.25em;
+    // text-align: center;
+    // font-family: 'ModernDOS8x8';
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 2vh;
+  }
+
+  @media (orientation: portrait) {
+    align-self: center;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+
+    li {
+      padding: 1em;
+    }
+  }
+
+  figure {
+    margin: 0;
+    img {
+      border-radius: 100%;
+      width: 25vh;
+      // padding: 1em;
+      margin: 1em;
+      // border-style: solid;
+      border-width: 1em;
+    }
+
+    figcaption {
+      font-size: 5vh;
+    }
+  }
+
+  h2 {
+    // max-width: 2vw;
+    padding: 1em;
+  }
+
+}
+
+.links {
+  // font-family: 'ModernDOS8x8';
+  
+  a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    // font-size: 2vh;
+    
+
+    ion-icon {
+      margin-bottom: 0.25em;
+      font-size: 2.5em;
+      transition: all 0.25s;
+    }
+
+    
+  }
+
+  a:hover {
+    ion-icon {
+      transform: scale(1.25);
+    }
+    // color: $foreground-alt;
+  }
+}
+
+.about {
+  // background-color: red;
+  // flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10vw;
+
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+
+  @media (orientation: portrait) {
+    flex-direction: column;
+    gap: 1vw;
+  }
+
+  article {
+    align-content: left;
+    max-width: 20vw;
+    @media (orientation: portrait) {
+      max-width: 100%;
+      padding: 2em;
+    }
+  }
+
+  aside {
+    align-content: right;
+    max-width: 20vw;
+    img {
+      border-radius: 100%;
+      // width: 20vw;
+    }
+    @media (orientation: portrait) {
+      max-width: 100%;
+    }
+  }
+
+}
+
+body {
+  // display: ;
+}
+
+// button {
+//   border-radius: 8px;
+//   border: 1px solid transparent;
+//   padding: 0.6em 1.2em;
+//   font-size: 1em;
+//   font-weight: 500;
+//   font-family: inherit;
+//   background-color: #1a1a1a;
+//   cursor: pointer;
+//   transition: border-color 0.25s;
+// }
+// button:hover {
+//   border-color: #646cff;
+// }
+// button:focus,
+// button:focus-visible {
+//   outline: 4px auto -webkit-focus-ring-color;
+// }
+
+// @media (prefers-color-scheme: light) {
+//   :root {
+//     color: #213547;
+//     background-color: #ffffff;
+//   }
+//   a:hover {
+//     color: #747bff;
+//   }
+//   button {
+//     background-color: #f9f9f9;
+//   }
+// }
