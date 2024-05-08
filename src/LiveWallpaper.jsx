@@ -14,7 +14,7 @@ function createGrid(w, h) {
   for (let i = 0; i < w; i++) {
     grid[i] = [];
     for (let j = 0; j < h; j++) {
-      grid[i][j] = Math.floor(Math.random() * 9);
+      grid[i][j] = backgroundText[Math.floor(Math.random() * backgroundText.length)]
     }
   }
   // console.log("creatig");
@@ -135,7 +135,7 @@ export default function LiveWallpaper() {
         {grid != null && grid[0].map((row, i) => {
 
           return grid.map((column, j) => {
-            return <div id={i + j} className='pixelItem' onClick={() => nexus(grid, i+j)} aria-hidden='true'>{column[i]}</div>
+            return <div id={i + j} className='pixelItem' aria-hidden='true'>{column[i]}</div>
           });
         })}
 

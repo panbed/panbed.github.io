@@ -12,9 +12,9 @@ export default function Window( {children, classStyle} ) {
   return (
     <>
       {/* todo: maybe use semantic tags to describe the window? */}
-      <div className={classStyle}>
+      <main className={classStyle}>
         {children}
-      </div>
+      </main>
     </>
   );
 }

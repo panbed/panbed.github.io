@@ -27,8 +27,8 @@ const projects = [
           <aside>
             <img src='https://raw.githubusercontent.com/panbed/prgrid/main/prgrid.png' width={450} alt='Screenshot of the main prgrid interface' />
             <ul>
-              <li><a href='https://bedp.dev/prgrid'><ion-icon name="play-circle"></ion-icon></a></li>
-              <li><a href='https://github.com/panbed/prgrid'><ion-icon name="code-slash"></ion-icon></a></li>
+              <li><a href='https://bedp.dev/prgrid' aria-label='prgrid site'><ion-icon name="play-circle" aria-hidden='true'></ion-icon></a></li>
+              <li><a href='https://github.com/panbed/prgrid' aria-label='prgrid source code'><ion-icon name="code-slash" aria-hidden='true'></ion-icon></a></li>
             </ul>
             </aside>
           
@@ -46,17 +46,18 @@ const projects = [
           <h2>fxdownloader</h2>
           <h3>A frontend for the yt-dlp project written in Java.</h3>
           {/* semantic tags here too probably */}
-          <a href='https://github.com/yt-dlp/yt-dlp'>Visit the yt-dlp project here.</a>
+          <a href='https://github.com/yt-dlp/yt-dlp'>Visit the yt-dlp project.</a>
 
-          <p>fxdownloader is a small Java/JavaFX frontend for yt-dlp. It allows for easy downloading of YouTube videos in a variety of output formats (including mp3, wav, ogg, etc.)</p>
+          <p>fxdownloader is a small Java/JavaFX frontend for yt-dlp.</p>
+          <p>It allows for easy downloading of YouTube videos in a variety of output formats (including mp3, wav, ogg, etc.)</p>
         </div>
         <div className='windowRight'>
           <aside>
             <img src='https://raw.githubusercontent.com/panbed/fxdownloader/master/src/main/resources/images/screenshot.png' width={450} alt='Screenshot of fxdownloader interface.' />
             <ul>
-              <li><a href='https://github.com/panbed/fxdownloader'><ion-icon name="code-slash"></ion-icon></a></li>
+              <li><a href='https://github.com/panbed/fxdownloader' aria-label='fxdownloader source code'><ion-icon name="code-slash" aria-hidden='true'></ion-icon></a></li>
             </ul>
-            </aside>
+          </aside>
           
         </div>
       </div>
@@ -74,14 +75,15 @@ const projects = [
             <h3>GOES data renderer and web frontend</h3>
             {/* semantic tags here too probably */}
             <p>Collaboration between my friend Ian and I for SwampHacks IX.</p>
+            <p></p>
           </div>
           <div className='windowRight'>
             <aside>
               <img src='https://raw.githubusercontent.com/ianjustiz/graphical-goes/main/sample_img.png' width={450} alt='Rendered image of Earth from GOES satellite.' />
               <ul>
-                <li><a href='https://github.com/panbed/fxdownloader'><ion-icon name="code-slash"></ion-icon></a></li>
+                <li><a href='https://github.com/ianjustiz/graphical-goes' aria-label='graphical-goes source code'><ion-icon name="code-slash" aria-hidden='true'></ion-icon></a></li>
               </ul>
-              </aside>
+            </aside>
             
           </div>
         </div>
