@@ -14,7 +14,13 @@ const projects = [
     content: (
       <div className='windowContent'>
         <div className='windowLeft'>
-          <h2>prgrid</h2>
+          <div className='titleLinks'>
+            <h2>prgrid</h2>
+            <ul>
+              <li><a href='https://bedp.dev/prgrid' aria-label='prgrid site'><ion-icon name="play-circle" aria-hidden='true'></ion-icon></a></li>
+              <li><a href='https://github.com/panbed/prgrid' aria-label='prgrid source code'><ion-icon name="code-slash" aria-hidden='true'></ion-icon></a></li>
+            </ul>
+          </div>
           <h3>A simple oscillator sound grid written in Javascript</h3>
           {/* semantic tags here too probably */}
 
@@ -25,12 +31,12 @@ const projects = [
         <div className='windowRight'>
           {/* <h2>Screenshots</h2> */}
           <aside>
-            <img src='https://raw.githubusercontent.com/panbed/prgrid/main/prgrid.png' width={450} alt='Screenshot of the main prgrid interface' />
-            <ul>
-              <li><a href='https://bedp.dev/prgrid' aria-label='prgrid site'><ion-icon name="play-circle" aria-hidden='true'></ion-icon></a></li>
-              <li><a href='https://github.com/panbed/prgrid' aria-label='prgrid source code'><ion-icon name="code-slash" aria-hidden='true'></ion-icon></a></li>
-            </ul>
-            </aside>
+            
+          </aside>
+          <figure>
+            <img src='https://raw.githubusercontent.com/panbed/prgrid/main/prgrid.png' width={450} alt='' />
+            <figcaption>Screenshot of the main prgrid interface.</figcaption>
+          </figure>
           
         </div>
       </div>
@@ -43,7 +49,12 @@ const projects = [
     content: (
       <div className='windowContent'>
         <div className='windowLeft'>
-          <h2>fxdownloader</h2>
+          <div className='titleLinks'>
+              <h2>fxdownloader</h2>
+              <ul>
+                <li><a href='https://github.com/panbed/fxdownloader' aria-label='fxdownloader source code'><ion-icon name="code-slash" aria-hidden='true'></ion-icon></a></li>
+              </ul>
+          </div>
           <h3>A frontend for the yt-dlp project written in Java.</h3>
           {/* semantic tags here too probably */}
           <a href='https://github.com/yt-dlp/yt-dlp'>Visit the yt-dlp project.</a>
@@ -52,13 +63,10 @@ const projects = [
           <p>It allows for easy downloading of YouTube videos in a variety of output formats (including mp3, wav, ogg, etc.)</p>
         </div>
         <div className='windowRight'>
-          <aside>
-            <img src='https://raw.githubusercontent.com/panbed/fxdownloader/master/src/main/resources/images/screenshot.png' width={450} alt='Screenshot of fxdownloader interface.' />
-            <ul>
-              <li><a href='https://github.com/panbed/fxdownloader' aria-label='fxdownloader source code'><ion-icon name="code-slash" aria-hidden='true'></ion-icon></a></li>
-            </ul>
-          </aside>
-          
+          <figure>
+            <img src='https://raw.githubusercontent.com/panbed/fxdownloader/master/src/main/resources/images/screenshot.png' width={450} alt='' />
+              <figcaption>Screenshot of fxdownloader interface.</figcaption>
+          </figure>
         </div>
       </div>
     )
@@ -71,20 +79,21 @@ const projects = [
       <>
         <div className='windowContent'>
           <div className='windowLeft'>
-            <h2>graphical-goes</h2>
+            <div className='titleLinks'>
+                <h2>fxdownloader</h2>
+                <ul>
+                <li><a href='https://github.com/ianjustiz/graphical-goes' aria-label='graphical-goes source code'><ion-icon name="code-slash" aria-hidden='true'></ion-icon></a></li>
+                </ul>
+            </div>
             <h3>GOES data renderer and web frontend</h3>
-            {/* semantic tags here too probably */}
             <p>Collaboration between my friend Ian and I for SwampHacks IX.</p>
-            <p></p>
+            <p>Fetches raw data files from NOAA satellites, compiles them into images, and displays them on a website.</p>
           </div>
           <div className='windowRight'>
-            <aside>
-              <img src='https://raw.githubusercontent.com/ianjustiz/graphical-goes/main/sample_img.png' width={450} alt='Rendered image of Earth from GOES satellite.' />
-              <ul>
-                <li><a href='https://github.com/ianjustiz/graphical-goes' aria-label='graphical-goes source code'><ion-icon name="code-slash" aria-hidden='true'></ion-icon></a></li>
-              </ul>
-            </aside>
-            
+            <figure>
+              <img src='https://raw.githubusercontent.com/ianjustiz/graphical-goes/main/sample_img.png' width={250} alt='' />
+              <figcaption>Rendered image of Earth from GOES satellite.</figcaption>
+            </figure>
           </div>
         </div>
       </>

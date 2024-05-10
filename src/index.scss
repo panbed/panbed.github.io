@@ -18,26 +18,30 @@ $background-text: #ffffff33;
 }
 
 :root {
-  // font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-family: 'ModernDOS8x16', monospace;
 
-  // color-scheme: light dark;
   color: $foreground;
   background-color: $background;
 
-  // disable antialiasing?
+  // try to disable antialiasing?
   font-synthesis: none;
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: never;
-  
+ 
   scrollbar-color: #00000000 #00000000;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:hover, a:active {
+  outline: 0;
 }
 
 // navbar styling
 .navigation {
-  // background: $background-alt;
-
   font-family: "ModernDOS8x8";
   font-size: large;
 
@@ -63,11 +67,11 @@ $background-text: #ffffff33;
   }
 
   li {
-    float: right;
+    float: left;
     padding: 1em;
 
     @media (orientation: portrait) {
-      padding: 0.25em;
+      padding: 0.75em;
     }
   }
 
@@ -90,7 +94,7 @@ $background-text: #ffffff33;
 
   ion-icon {
     // the ion icons are slightly off center??
-    transform: translateY(25%);
+    transform: translateY(15%);
   }
 
   a:hover {
@@ -215,11 +219,11 @@ $background-text: #ffffff33;
   // display: flex;
   // flex-direction: column;
   flex: 1;
-  background-color: #000000cc;
-  border-style: solid;
-  border-color: $foreground-alt;
-  border-width: 0.25em;
-  border-radius: 0.25em;
+  background-color: #00000088;
+  // border-style: solid;
+  // border-color: $foreground-alt;
+  // border-width: 0.25em;
+  // border-radius: 0.25em;
 
   padding: 1em;
   overflow-y: scroll;
@@ -250,6 +254,31 @@ $background-text: #ffffff33;
     flex-direction: column;
     // grid-template-columns: repeat(2, 1fr);
     // gap: 1em;
+
+    .titleLinks {
+      // background-color: red;
+      display: flex;
+      flex-direction: row;
+      
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0 0.75em 0 1.5em;
+        display: flex;
+        // align-items: center;
+        text-align: center;
+        justify-content: center;
+        align-self: center;
+        gap: 1.5em;
+      }
+      a {
+        font-size: 1.5em;
+      }
+      ion-icon {
+        transform: translateY(15%);
+      }
+
+    }
   }
   
   .windowRight {
@@ -270,13 +299,8 @@ $background-text: #ffffff33;
     }
   
     li {
-      // padding: 1em;
       padding: 0em 0em 1em 0em;
-      // background-color: purple;
-      // position: relative;
-      // display: flex;
-      // flex-direction: row;
-      // flex-wrap: wrap;
+
     }
     a {
       // background-color: red;
@@ -285,6 +309,16 @@ $background-text: #ffffff33;
       padding: 0.5em;
       float: center;
 
+    }
+
+    figure {
+      // padding: 1em;
+      text-align: center;
+
+      figcaption {
+        // color: $foreground-alt;
+        padding-top: 1em;
+      }
     }
 
     // align-items: right;
@@ -310,16 +344,10 @@ $background-text: #ffffff33;
 }
 
 .icons {
-  // position: flex;
-  // flex-direction: row;
-  // flex-basis: 0;
-  // background: green;
-
-  // pointer-events: auto;
 
   ul {
     list-style-type: none;
-    // margin: 0;
+    margin: 0;
     padding: 1em;
     // background-color: red;
 
@@ -335,15 +363,14 @@ $background-text: #ffffff33;
   }
 
   li {
-    // padding: 1em;
     padding: 0em 0em 1em 0em;
-    // position: relative;
     display: flex;
     flex-direction: column;
     // flex-wrap: wrap;
 
     text-align: center;
     justify-content: left;
+    align-items: center;
     
     @media (orientation: portrait) {
       padding: 0em;
@@ -562,41 +589,4 @@ $background-text: #ffffff33;
       max-width: 100%;
     }
   }
-
 }
-
-body {
-  // display: ;
-}
-
-// button {
-//   border-radius: 8px;
-//   border: 1px solid transparent;
-//   padding: 0.6em 1.2em;
-//   font-size: 1em;
-//   font-weight: 500;
-//   font-family: inherit;
-//   background-color: #1a1a1a;
-//   cursor: pointer;
-//   transition: border-color 0.25s;
-// }
-// button:hover {
-//   border-color: #646cff;
-// }
-// button:focus,
-// button:focus-visible {
-//   outline: 4px auto -webkit-focus-ring-color;
-// }
-
-// @media (prefers-color-scheme: light) {
-//   :root {
-//     color: #213547;
-//     background-color: #ffffff;
-//   }
-//   a:hover {
-//     color: #747bff;
-//   }
-//   button {
-//     background-color: #f9f9f9;
-//   }
-// }

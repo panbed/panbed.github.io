@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import { HashRouter, useLocation } from 'react-router-dom';
 
 import Layout from './Layout';
 import Home from './Home';
@@ -19,7 +19,7 @@ function App() {
 
   return (
 
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Layout title={headerTitle} />}>
           <Route index element={<Home headerTitle={headerTitle} setHeaderTitle={setHeaderTitle}/>}  />  
@@ -27,7 +27,7 @@ function App() {
           <Route path="about" element={<About headerTitle={headerTitle} setHeaderTitle={setHeaderTitle} />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
