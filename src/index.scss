@@ -86,9 +86,8 @@ a:hover, a:active {
     
     padding: 0.75em;
     @media (orientation: portrait) {
-      // padding: 0%;
-      // border-style: solid;
-      // border-radius: 10em;
+      padding: 0.1em;
+      // background-color: red;
     }
   }
 
@@ -148,7 +147,7 @@ a:hover, a:active {
   z-index: -1;
 
   user-select: none;
-  top: 20vh; // no idea what im doing bro
+  // top: 20vh; // no idea what im doing bro
 
   gap: 0em;
   overflow: hidden;
