@@ -1,0 +1,58 @@
+@use 'sass:math';
+
+// Max number of characters that the name can be
+$max-length: 20;
+
+#characters-container,
+#characters-container-noanim {
+  font-family: "ModernDOS8x16", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  user-select: none;
+}
+
+#background-text {
+  word-wrap: break-word;
+  font-size: 6px;
+}
+
+// bruh...
+// #characters-container {
+//   transition: all 0.25s ease-in-out;
+
+//   #characters-container-noanim {
+//     color: rgba(0, 0, 0, 0.0);
+//     transition: all 0.25s ease-in-out;
+//   }
+
+//   &:hover {
+//     #characters-container-noanim {
+//       color: rgba(255, 255, 255, 1.0);
+//       transform: scale(125%);
+//       z-index: 100;
+//     }
+
+//     & {
+//       color: rgba(0, 0, 0, 0.0);
+//       z-index: -1;
+//     }
+//   }
+// }
+
+@for $i from 0 to $max-length {
+  #character-#{$i} {
+    animation: character-#{$i}-animation 1s alternate infinite ease-in-out;
+    animation-delay: -(($i * 0.25) + 1) + s;
+  }
+
+  @keyframes character-#{$i}-animation {
+    from {
+      transform: translateY(-0.15em);
+      // color: white;
+    }
+    to {
+      transform: translateY(0.15em);
+      // color: darkgray;
+    }
+  }
+}

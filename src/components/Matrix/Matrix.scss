@@ -1,0 +1,42 @@
+div {
+  font-family: DotGothic16;
+}
+
+.matrix {
+  pointer-events: auto;
+
+  opacity: 0.15;
+
+  width: 100%;
+
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: -1;
+
+  user-select: none;
+
+  gap: 0em;
+  overflow: hidden;
+  
+  margin: 0;
+  padding: 0;
+
+  max-width: 100%;
+
+  .pixelItem {
+    transition: all 0.25s;
+    padding: 0.25em;
+    font-size: 2.5em;
+    animation: hover-animation 1s alternate infinite ease-in-out;
+  }
+}
+
+@keyframes hover-animation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.25;
+  }
+}
