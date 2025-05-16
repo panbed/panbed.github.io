@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client"
-import { BrowserRouter, Route, Routes } from "react-router"
+import { HashRouter, Route, Routes } from "react-router"
 import "./index.css"
 
 import Home from "./containers/Home/Home"
@@ -9,7 +9,7 @@ import PageNotFound from "./containers/PageNotFound/PageNotFound"
 import About from "./containers/About/About"
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <HashRouter>
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
@@ -18,5 +18,5 @@ createRoot(document.getElementById('root')).render(
         <Route path="*" element={<PageNotFound />} />
       </Route>
     </Routes>
-  </BrowserRouter>,
+  </HashRouter>,
 )
