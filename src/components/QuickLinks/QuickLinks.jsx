@@ -17,7 +17,7 @@ export default function QuickLinks({className}) {
           </Link>
         </li>
         <li>
-          <Link className={linkClassName} to="files/Bed_Pandey_Resume.pdf" target="_blank">
+          <Link className={linkClassName} to="https://bedp.dev/files/Bed_Pandey_Resume.pdf" target="_blank">
             <FileUser aria-hidden="true" className={iconClassName} strokeWidth={1.5}/>
             <p>Resume</p>
           </Link>
