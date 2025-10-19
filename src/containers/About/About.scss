@@ -164,7 +164,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: #ffffff;
+  background: light-dark(var(--color-text-light), var(--color-text-dark));
   display: block;
   pointer-events: none;
 }

@@ -14,9 +14,24 @@
   url('./assets/fonts/ModernDOS8x16.ttf') 
 }
 
+/* color variables */
+:root {
+  /* color-scheme: light dark; */
+  color-scheme: dark;
+
+  --color-bg-dark: black;
+  --color-bg-light: lightgray;
+
+  --color-text-dark: white;
+  --color-text-light: black;
+
+  --color-accent-dark: lightgray;
+  --color-accent-light: darkgray;
+}
+
 body {
-  background-color: black;
-  color: white;
+  background-color: light-dark(var(--color-bg-light), var(--color-bg-dark));
+  color: light-dark(var(--color-text-light), var(--color-text-dark));
 }
 
 .link-underline {
@@ -25,6 +40,6 @@ body {
   }
 
   a:hover {
-    color: lightgray;
+    color: light-dark(var(--color-accent-light), var(--color-accent-dark));
   }
 }

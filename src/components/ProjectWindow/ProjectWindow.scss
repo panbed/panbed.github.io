@@ -1,3 +1,9 @@
 .background-image {
   background-position: center;
 }
+
+.project-window {
+  // background is always gonna be dark
+  color: var(--color-text-dark);
+  box-shadow: 0 0 0.25em black;
+}

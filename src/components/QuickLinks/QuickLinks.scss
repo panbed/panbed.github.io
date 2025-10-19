@@ -1,7 +1,7 @@
 #quick-links {
   svg {
-    color: black;
-    background-color: white;
+    color: light-dark(var(--color-text-dark), var(--color-text-light));
+    background-color: light-dark(black, white);
     // border-radius: 0.5em;
     transition: all ease-in-out 0.20s;
     image-rendering: pixelated;
